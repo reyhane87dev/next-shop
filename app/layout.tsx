@@ -1,4 +1,4 @@
-import './style.css'
+import "./../styles/index.css";
 
 export default function RootLayout({
   children,
@@ -7,9 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="container mx-auto py-10" >
-        {children}
-      </body>
+      <body className="container mx-auto py-10">{children}</body>
     </html>
   );
 }
