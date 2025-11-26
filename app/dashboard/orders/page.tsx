@@ -6,7 +6,6 @@ export default async function OrderPage(){
         await connectToDatabase();
         console.log(Order == null)
         const orders = await Order.find({}).lean();
-        console.log(orders)
         const serializedOrders = orders.map(order => ({
             ...order,
             _id: order._id.toString(),
