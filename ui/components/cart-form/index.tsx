@@ -15,6 +15,7 @@ async function postOrder(value : OrderInterface,clearCart : ()=>void){
             "Content-Type" : "application/json"
         }
     });
+	console.log(response);
     if (response.ok){
         clearCart()
         alert("سفارش ثبت گردید");

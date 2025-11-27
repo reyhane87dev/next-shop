@@ -3,10 +3,12 @@ import { CartContext } from "@/context/cart-context";
 import ProductInterface from "@/types/Product-inteface";
 import { useContext } from "react";
 
-export default function AddToCartButton({item} : {item : ProductInterface}){
+export default function AddToCartButton({item} : {item : string}){
+    let itemConvertedToObject :  ProductInterface = JSON.parse(item)
+
     const {addToCart} = useContext(CartContext);
     function handleOnclick (){
-	addToCart(item);
+	addToCart(itemConvertedToObject);
 	alert("محصول به سبد خرید اضافه شد")
     }
     return (

@@ -17,6 +17,10 @@ const items = [
         title : "فهرست سفارش ها",
         path : "/dashboard/orders",
     },
+    {
+        title : "ویرایش محصولات (به زودی)",
+        path : "#",
+    },
 ]
 
 export default function DashboardBar(){

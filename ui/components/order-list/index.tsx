@@ -5,11 +5,11 @@ import OrderInterface from '@/types/Order-interface'
 
 
 export default function OrderList({orders} : {orders : OrderInterface[] }) {
-	console.log(orders)
+
     return (
 	<>
 	   {
-		orders.map((order)=>{return <OrderCard order={order} />})
+		orders.map((order,index)=>{return <OrderCard key={index} data={JSON.stringify(order)} />})
 	    }
 	</>
     )

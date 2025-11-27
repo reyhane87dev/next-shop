@@ -1,7 +1,7 @@
-export default function LoadingPage(){
+﻿export default function LoadingPage(){
     return (
         <div>
-            loading...
+            درحال بارگیری ...
         </div>
     )
 }

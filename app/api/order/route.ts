@@ -2,26 +2,16 @@
 import OrderInterface from "@/types/Order-interface";
 import { NextRequest, NextResponse } from "next/server";
 import validateBody from "../validate-body";
+import connectToDataBase from '@/lib/connect-mongo'
 export async function POST(req : NextRequest){
     try{
 
+	await connectToDataBase ();
 
         const body : OrderInterface = await req.json();
+	console.log(body)
         const {name,email,postalCode,address,cart} = body;
-        // ---- validation ----
-        const errors = validateBody({expectedItems : ['name','email','address','postalCode'],body});
-        if (body.postalCode.length < 10){
-            errors.push("کد پستی نامعتبر است")
-        }
-        if (errors.length){
-            return NextResponse.json(
-                JSON.stringify({
-                    error : errors,
-                    message : "اطلاعات ارسال شده نامعتبر میباشد"
-                })
-            ,{status : 400,headers : {'Content-Type' : "application/json"}})
-        }
-        // ---- creating new order ---
+
         const newOrder = await new Order({
             name,email,postalCode ,address,cart
         });
@@ -33,7 +23,7 @@ export async function POST(req : NextRequest){
         ,{status : 201,headers : {'Content-Type' : "application/json"}});
         
     }catch(error){
-        // ---- server error ---
+        console.log(error)
         return new Response(
             JSON.stringify({
                 message : "خطای سمت سرور",

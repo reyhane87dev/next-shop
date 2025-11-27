@@ -71,7 +71,7 @@ export default function AddProductPage() {
     })
 
     return (
-        <div className="p-4 max-w-2xl mx-auto">
+        <div className=" flex flex-col">
             <h1 className="text-2xl font-bold mb-6 text-gray-800">افزودن محصول جدید</h1>
             
             <ImageInput data={{ error: imageInputError, setError: setImageInputError, images, setImages }} />
@@ -157,7 +157,7 @@ export default function AddProductPage() {
             </div>
 
             <button 
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all font-medium"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all font-medium"
                 onClick={() => formik.handleSubmit()}
                 type="button"
             >

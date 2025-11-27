@@ -22,7 +22,7 @@ export default function CartItemsList ({cart,totalPrice} : {totalPrice : number,
                             {
                                 cart.map((product)=>{
                                     return (
-                                        <li key={product._id} className="flex flex-col gap-2 py-2 bg-slate-300 p-4 rounded-md" >
+                                        <li key={product._id} className="flex flex-col gap-2 py-2 bg-slate-100 p-4 rounded-md" >
                                             <div className="flex items-center justify-between ">
                                                 <div className="flex gap-6 items-center" >
                                                     <Image className="w-20 h-20 object-cover rounded-md" src={product.images[0]} alt={product.title} width={400} height={200} />
